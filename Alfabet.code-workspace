@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "BluetoothControl2",
+			"path": "C:/Users/user/Documents/PlatformIO/Projects/BluetoothControl2"
+		},
+		{
+			"name": "BluetoothControl",
+			"path": "C:/Users/user/Documents/PlatformIO/Projects/BluetoothControl"
+		}
+	],
+	"settings": {
+		"python.analysis.extraPaths": [
+			"c:\\Users\\user\\.vcpkg\\artifacts\\2139c4c6\\debuggers.arm.armdbg\\6.2.0\\sw\\ide\\plugins\\com.arm.debug.interpreter.jython.api_6.2.0.20240624_165530"
+		]
+	}
+}
