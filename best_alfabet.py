@@ -64,17 +64,22 @@ HEBREW = [
     ("ט", "тет", "т", "tet.png"),
     ("י", "йод", "й / и", "yod.png"),
     ("כ", "каф", "к", "kaf.png"),
+    ("ך", "каф софит", "к", "kaf_sofit.png"),
     ("ל", "ламед", "л", "lamed.png"),
     ("מ", "мем", "м", "mem.png"),
+    ("ם", "мем софит", "м", "mem_sofit.png"),
     ("נ", "нун", "н", "nun.png"),
+    ("ן", "нун софит", "н", "nun_sofit.png"),
     ("ס", "самех", "с", "samekh.png"),
     ("ע", "айн", "нет звука / 'а'", "ayin.png"),
     ("פ", "пей", "п / ф", "pey.png"),
+    ("ף", "пей софит", "п / ф", "pey_sofit.png"),
     ("צ", "цади", "ц", "tsadi.png"),
+    ("ץ", "цади софит", "ц", "tsadi_sofit.png"),
     ("ק", "куф", "к", "kuf.png"),
     ("ר", "реш", "р", "resh.png"),
-    ("ש", "шин", "ш / с", "shin.png"), # Исправлено на правильный символ иврита
-    ("ת", "тав", "т", "tav.png"),      # Исправлено на правильный символ иврита
+    ("ש", "шин", "ш / с", "shin.png"),
+    ("ת", "тав", "т", "tav.png"),
 ]
 
 class HebrewTrainer:
@@ -89,6 +94,7 @@ class HebrewTrainer:
         self.style.configure('Question.TLabel', font=QUESTION_FONT)
         self.style.configure('Score.TLabel', font=SCORE_FONT)
         self.style.configure('Result.TLabel', font=RESULT_FONT)
+        self.style.configure('Developer.TLabel', font=('Helvetica', 10, 'bold'), foreground='grey')
 
         # Создаем стили для кнопок ответов с разными цветами
         self.button_styles = []
@@ -216,6 +222,17 @@ class HebrewTrainer:
             bootstyle=SECONDARY
         )
         self.score_label.pack(pady=10)
+         # Метка "Разработчик" в правом нижнем углу
+        self.dev_label = tk.Label(
+            self.root,
+            text="Разработчик Антон Харчевский",
+            font=('Helvetica', 10, 'bold'),
+            fg='#808080',  # Серый цвет
+            bg='#f0f0f0',  # Цвет фона (можно сделать его прозрачным, используя opacity, но это сложнее)
+            bd=0,  # Убираем рамку
+            relief=tk.FLAT
+        )
+        self.dev_label.place(relx=1.0, rely=1.0, x=-10, y=-10, anchor='se')
     
     def change_mode(self):
         self.mode = self.mode_var.get()
